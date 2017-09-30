@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
-
+#!/home/ec2-user/anaconda2/bin/python
 import requests
 import re
 import pandas as pd
@@ -26,5 +20,5 @@ time = pd.to_datetime(result2.group(1))
 
 df = pd.DataFrame({'capacity':[capacity], 'time':[time]})
 
-conn = sqlite3.connect("trashr.db")
+conn = sqlite3.connect("/home/ec2-user/trashr-viz/trashr.db")
 df.to_sql("capacity",con=conn, if_exists = 'append')
