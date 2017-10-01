@@ -28,5 +28,5 @@ def make_basic_ts_plot(config):
     
     plt.xlabel('time')
     plt.ylabel('capacity (%)')
-    plt.title('A Day in the Life of Lonely Dumpster')
+    plt.title('A Day in the Life of a Lonely Dumpster')
     plt.savefig("%s/ts_plot.png"%(config['output_dir']))
