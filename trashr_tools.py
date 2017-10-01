@@ -3,6 +3,8 @@ import requests
 import re
 import pandas as pd
 import sqlite3
+from ConfigParser import SafeConfigParser
+import os
 
 def scrape(config):
     data = requests.get("http://trashr123.herokuapp.com/demo/")
@@ -23,3 +25,9 @@ def scrape(config):
     
     conn = sqlite3.connect(config['db_dir'])
     df.to_sql("capacity",con=conn, if_exists = 'append')
+
+def loadConfig():
+    parser = SafeConfigParser()
+    parser_path = os.path.dirname(os.path.realpath(__file__))+"/trashr_config.ini"
+    parser.read(parser_path)
+    return dict(parser.items("trashr"))
