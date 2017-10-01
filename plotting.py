@@ -7,6 +7,7 @@ import sqlite3
 import sqlalchemy
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+sns.set_style("darkgrid")
 
 def make_basic_ts_plot(config):
     db_name = config['db_dir']
