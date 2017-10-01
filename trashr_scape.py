@@ -5,7 +5,7 @@ import pandas as pd
 import sqlite3
 
 data = requests.get("http://trashr123.herokuapp.com/demo/")
-f1_matcher = re.compile("Sullivan Shops III dumpster is currently .*([0-9]+\.[0-9]+)%\n", flags=re.DOTALL)
+f1_matcher = re.compile("Sullivan Shops III dumpster is currently .* ([0-9]+\.[0-9]+)%\n", flags=re.DOTALL)
 f2_matcher = re.compile("Last reading taken at \n        <p>(.*)</p>", flags=re.DOTALL)
 
 result1 = f1_matcher.search(data.text)
