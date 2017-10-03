@@ -21,7 +21,7 @@ def make_basic_ts_plot(config):
     capacity = df.capacity.as_matrix()
     fig = plt.figure(1)
     plt.clf()
-    plt.plot(time, capacity, lw=4)
+    plt.plot(time, capacity, '.--', lw=3)
     plt.ylim([0,100])
     fig.autofmt_xdate()
     plt.gca().xaxis.set_major_formatter(xfmt)
